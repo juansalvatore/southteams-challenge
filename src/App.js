@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { Button } from './ui/Buttons'
 
 export const App = () => {
-  const [number, setNumber] = useState(0)
   return (
     <AppWrapper>
-      <Header className="App-header">{number}</Header>
-      <button type="button" onClick={() => setNumber(number + 1)}>
-        add
-      </button>
+      <Button primary>Add item</Button>
     </AppWrapper>
   )
 }
 
-const Header = styled.header`
-  color: ${({ theme }) => theme.colors.cBlue};
-`
-
 const AppWrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.lightGray};
+  background-color: ${({ theme }) => theme.colors.bgGray};
   position: absolute;
   height: 100%;
   width: 100%;

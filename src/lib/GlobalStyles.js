@@ -1,6 +1,5 @@
 import reset from 'styled-reset'
 import { createGlobalStyle } from 'styled-components'
-import { theme } from './theme'
 
 export const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -11,8 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     padding: 0;
     margin: 0;
-    /* background-color: ${theme.colors.lightGray}; */
-
   }
 
   * {
