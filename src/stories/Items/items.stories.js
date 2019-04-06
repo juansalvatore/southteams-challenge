@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Item } from '../../ui/Items'
 
-const stories = storiesOf('Item', module)
+const stories = storiesOf('UI/Item', module)
 
 stories.add('Removable Item', () => {
   return (

@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Button } from '../../ui/Buttons'
 
-const stories = storiesOf('Button', module)
+const stories = storiesOf('UI/Button', module)
 
 stories.add('Primary', () => {
   return <Button primary>Primary Button</Button>
