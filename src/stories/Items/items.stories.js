@@ -8,7 +8,7 @@ const stories = storiesOf('UI/Item', module)
 stories.add('Removable Item', () => {
   return (
     <div style={{ padding: 20 }}>
-      <Item />
+      <Item>test</Item>
     </div>
   )
 })

@@ -3,11 +3,16 @@ import { device } from '../../lib/theme'
 
 const possibleTextTransform = ['capitalize', 'lowercase', 'uppercase']
 const possibleFontWeight = ['bold', 'bolder', 'lighter', 'normal']
+const possibleTextAlign = ['center', 'left', 'right']
 
 export const textMixin = props => css`
   ${Object.keys(props).reduce((fields, property) => {
     if (possibleTextTransform.includes(property)) {
       return [...fields, `text-transform: ${property};`]
+    }
+
+    if (possibleTextAlign.includes(property)) {
+      return [...fields, `text-align: ${property};`]
     }
 
     if (possibleFontWeight.includes(property)) {
@@ -16,6 +21,14 @@ export const textMixin = props => css`
 
     return fields
   }, [])}
+`
+
+export const ItemsCounter = styled.p`
+  ${textMixin};
+  margin-bottom: 40px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.textGray};
 `
 
 export const H1 = styled.h1`
@@ -56,7 +69,7 @@ export const H3 = styled.h3`
   ${textMixin};
   color: inherit;
   font-size: ${({ theme }) => theme.fontSize.xl}; /* 32px */
-  line-height: calc(${({ theme }) => theme.fontSize.xl} + 0.5rem); /* 40px */
+  line-height: calc(${({ theme }) => theme.fontSize.md}); /* 40px */
   letter-spacing: 0.3px;
   margin-top: 16px;
   margin-bottom: 16px;

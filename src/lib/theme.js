@@ -30,6 +30,7 @@ theme.colors = {
   borderGray: 'rgb(204, 204, 204)', // secondary button gray border color
   primary: 'rgb(18, 168, 255)', // primary button background blue color
   borderPrimary: 'rgb(15, 134, 204)', // primary button border color
+  textGray: 'rgb(148, 148, 148)',
 }
 
 theme.fontSize = {

@@ -2,20 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { capitalizeFirstLetter } from '../../utils'
 
-export const Item = () => {
+export const Item = ({ children, id }) => {
   return (
     <ItemWrapper>
-      {capitalizeFirstLetter('test')}
-      <button type="button" onClick={() => alert('deleted')}>
+      {capitalizeFirstLetter(children)}
+      <button type="button" onClick={() => alert(id)}>
         delete
       </button>
     </ItemWrapper>
   )
 }
 
-const ItemWrapper = styled.div`
+const ItemWrapper = styled.li`
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   padding: 18px 20px;
   font-size: ${({ theme }) => theme.fontSize.md};
   border-radius: 5px;
