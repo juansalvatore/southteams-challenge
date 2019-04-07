@@ -1,10 +1,10 @@
 import React from 'react'
 // eslint-disable-next-line
 import { storiesOf } from '@storybook/react'
-import Modal from '../../ui/Modal'
+import { ItemLoader } from '../../ui/Loader/ItemLoader'
 
-const stories = storiesOf('UI/Modal', module)
+const stories = storiesOf('UI/ItemLoader', module)
 
 stories.add('Default', () => {
-  return <Modal>test</Modal>
+  return <ItemLoader />
 })
