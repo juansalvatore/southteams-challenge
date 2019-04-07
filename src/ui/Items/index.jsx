@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { capitalizeFirstLetter } from '../../utils'
 
-export const Item = ({ children, id }) => {
+export const Item = ({ children }) => {
   return (
     <ItemWrapper>
       {capitalizeFirstLetter(children)}
-      <button type="button" onClick={() => alert(id)}>
+      <button type="button" onClick={() => alert(children)}>
         delete
       </button>
     </ItemWrapper>

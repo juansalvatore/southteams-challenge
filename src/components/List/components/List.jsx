@@ -3,12 +3,7 @@ import styled from 'styled-components'
 import { Item } from '../../../ui/Items'
 
 export const List = ({ items }) => {
-  const showItems = () =>
-    items.map(({ id, title }) => (
-      <Item key={id} id={id}>
-        {title}
-      </Item>
-    ))
+  const showItems = () => items.map(title => <Item key={title}>{title}</Item>)
   return <ListWrapper>{showItems()}</ListWrapper>
 }
 
