@@ -10,7 +10,7 @@ const breakpoint = {
 
 const fontSize = {
   xxs: '0.625rem',
-  xs: '0.75rem',
+  xs: '0.78rem',
   sm: '0.875rem',
   md: '1.15rem',
   lg: '1.5rem' /* 24px */,

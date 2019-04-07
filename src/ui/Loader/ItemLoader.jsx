@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import ContentLoader from 'react-content-loader'
 
-// f3f3f3
-// ecebeb
-
 const SIZE = 20
 export const ItemLoader = () => (
   <>
@@ -17,6 +14,4 @@ export const ItemLoader = () => (
   </>
 )
 
-const List = styled(ContentLoader)`
-  position: relative;
-`
+const List = styled(ContentLoader)``

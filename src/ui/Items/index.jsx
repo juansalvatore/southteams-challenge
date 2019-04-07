@@ -33,7 +33,7 @@ const ItemName = styled.span`
 
 const ItemWrapper = styled.li`
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 18px 20px;
   font-size: ${({ theme }) => theme.fontSize.md};
   border-radius: 5px;

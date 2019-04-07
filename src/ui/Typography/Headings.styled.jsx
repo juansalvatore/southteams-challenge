@@ -29,6 +29,7 @@ export const ItemsCounter = styled.p`
   font-size: ${({ theme }) => theme.fontSize.xs};
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.textGray};
+  font-weight: 700;
 `
 
 export const H1 = styled.h1`

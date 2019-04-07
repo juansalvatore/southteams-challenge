@@ -49,7 +49,6 @@ export const GlobalStyles = createGlobalStyle`
   button[name=delete] {
     outline: none;
   }
-  
 
   button[name=delete]:focus {
     filter: contrast(1%);

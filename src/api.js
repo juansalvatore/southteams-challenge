@@ -2,7 +2,7 @@ export const getAllItems = () =>
   new Promise(resolve => {
     setTimeout(() => {
       resolve(JSON.parse(localStorage.getItem('items')))
-    }, 4000)
+    }, 1500) // To test async functions
   })
 
 export const addItem = newItem =>
