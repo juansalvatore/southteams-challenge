@@ -1,19 +1,29 @@
 import { useState, useEffect } from 'react'
-import { setItem } from '../api'
+import { addItem, getAllItems, removeItem } from '../api'
 
-export const useStateWithLocalStorage = key => {
+export const useStateWithLocalStorage = () => {
   const [items, setItems] = useState([])
+  const [isListLoading, setIsListLoading] = useState(true)
 
   useEffect(() => {
-    const list = JSON.parse(localStorage.getItem(key))
-    console.log(list)
-    if (list !== null) setItems([...list])
+    setIsListLoading(true)
+    getAllItems().then(list => {
+      if (list !== null) setItems([...list])
+      setIsListLoading(false)
+    })
   }, [])
 
-  const AddItem = item => {
-    setItem(key, [...items, item])
-    setItems([...items, item])
+  const addItemHook = newItem => {
+    addItem(newItem)
+    const newItemList = items !== null ? [...items, newItem] : [newItem]
+    setItems(newItemList)
   }
 
-  return [items, AddItem]
+  const removeItemHook = itemToRemove => {
+    removeItem(itemToRemove)
+    const newItemList = items.filter(item => item !== itemToRemove)
+    setItems(newItemList)
+  }
+
+  return [items, addItemHook, removeItemHook, isListLoading]
 }

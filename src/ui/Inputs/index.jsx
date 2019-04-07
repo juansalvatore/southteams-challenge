@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
 import styled from 'styled-components'
 
 export const Input = props => {
-  return <InputStyled {...props} />
+  const { isModalOpen } = props
+  const inputRef = createRef()
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [isModalOpen])
+
+  return <InputStyled ref={inputRef} {...props} />
 }
 
 const InputStyled = styled.input.attrs({ type: 'text' })`

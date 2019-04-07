@@ -1,25 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import styled, { css } from 'styled-components'
 import { useStateWithLocalStorage } from './SupermarketList.hooks'
 import { Button } from '../ui/Buttons'
 import { List } from '../components'
 import { ItemsCounter, H3 } from '../ui/Typography/Headings.styled'
-import { Modal } from '../ui/Modal'
+
+const Modal = React.lazy(() => import('../ui/Modal'))
 
 export const SupermarketList = () => {
-  const [items, setItems] = useStateWithLocalStorage('items')
+  const [items, addItem, removeItem, isListLoading] = useStateWithLocalStorage()
   const [isModalOpen, setModalOpen] = useState(false)
 
   return (
     <SupermarketListWrapper isModalOpen={isModalOpen}>
-      {isModalOpen && <Modal setModalOpen={setModalOpen} setItems={setItems} />}
+      {isModalOpen && (
+        <Suspense fallback={<div />}>
+          <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} items={items} addItem={addItem} />
+        </Suspense>
+      )}
+
       <SupermarketListContainer>
         <H3 bold center>
           Supermarket List
         </H3>
         <ItemsCounter center>{items.length} items</ItemsCounter>
-        <List items={items} />
-        <Button primary onClick={() => setModalOpen(true)}>
+        {!isListLoading && <List items={items} addItem={addItem} removeItem={removeItem} />}
+        <Button
+          primary
+          onClick={() => {
+            setModalOpen(true)
+          }}
+        >
           Add item
         </Button>
       </SupermarketListContainer>
