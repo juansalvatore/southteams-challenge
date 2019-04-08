@@ -2,6 +2,27 @@
 
 Create a React app that allows the user to make a supermarket list.
 
+
+- APP: https://southteams-challenge.netlify.com/
+- STORYBOOK: https://southteams-challenge-storybook.netlify.com/
+
+## How to run the project locally
+
+1. `git clone https://github.com/juansalvatore/southteams-challenge.git`
+
+2. `npm install`
+
+3. `npm start`
+
+## How to run the project locally
+Steps 1 and 2 from above and: `npm run storybook`
+
+## Technologies used
+
+- [Reactjs](https://reactjs.org/) - JavaScript library for building user interfaces
+- [styled-components](https://www.styled-components.com/) - Visual primitives for the component age 💅
+- [storybook](https://storybook.js.org/) - Tool for developing UI components in isolation for React
+
 ## Specs:
 
 The app has 3 sections:
