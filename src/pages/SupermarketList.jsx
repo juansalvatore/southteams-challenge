@@ -1,10 +1,9 @@
 import React, { useState, Suspense } from 'react'
 import styled, { css } from 'styled-components'
 import { useSupermarketListState } from '../hooks/SupermarketList.hooks'
-import { Button } from '../ui/Button'
-import { ItemLoader } from '../ui/ListLoader'
+import { Button, ItemLoader } from '../ui'
 import { List } from '../components/List'
-import { ItemsCounter, H3 } from '../ui/Typography/Headings.styled'
+import { H3, ItemsCounter } from '../ui/Typography/Headings.styled'
 
 const Modal = React.lazy(() => import('../ui/Modal'))
 

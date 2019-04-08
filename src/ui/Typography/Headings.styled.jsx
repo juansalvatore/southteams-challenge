@@ -76,7 +76,7 @@ export const H3 = styled.h3`
   margin-bottom: 16px;
 
   ${device.md`
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.8rem; /* 24px */
     line-height: 2rem; /* 32px */
     margin-top: 8px;
     margin-bottom: 8px;

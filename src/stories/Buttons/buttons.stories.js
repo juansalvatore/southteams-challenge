@@ -1,7 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line
 import { storiesOf } from '@storybook/react'
-import { Button } from '../../ui/Buttons'
+import { Button } from '../../ui'
 
 const stories = storiesOf('UI/Button', module)
 
