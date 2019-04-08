@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Button } from '../Buttons'
-import { Input } from '../Inputs'
-import { H4 } from '../Typography/Headings.styled'
-import { capitalizeFirstLetter } from '../../utils'
-import { device } from '../../lib/theme'
+import { Button } from './Button'
+import { Input } from './Input'
+import { H4 } from './Typography/Headings.styled'
+import { capitalizeFirstLetter } from '../utils'
+import { device } from '../lib/theme'
 
 const Modal = ({ isModalOpen, setModalOpen, items, addItem }) => {
   const [itemText, setItemText] = useState('')

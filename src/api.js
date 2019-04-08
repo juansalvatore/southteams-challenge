@@ -8,12 +8,7 @@ export const getAllItems = () =>
 export const addItem = newItem =>
   new Promise(resolve => {
     getAllItems().then(items => {
-      let newItemList = []
-      if (items !== null) {
-        newItemList = [...items, newItem]
-      } else {
-        newItemList = [newItem]
-      }
+      const newItemList = items !== null ? [...items, newItem] : [newItem]
       resolve(localStorage.setItem('items', JSON.stringify(newItemList)))
     })
   })

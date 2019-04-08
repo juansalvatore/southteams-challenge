@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import trash from '../../static/Trash.svg'
+import trash from '../static/Trash.svg'
 
 export const Item = ({ children, removeItem }) => {
   return (

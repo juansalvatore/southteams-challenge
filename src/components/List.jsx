@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Item } from '../../ui/Items'
+import { Item } from '../ui/Item'
 
 export const List = ({ items, setItems, removeItem }) => {
   const showItems = () =>

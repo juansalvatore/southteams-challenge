@@ -1,15 +1,15 @@
 import React, { useState, Suspense } from 'react'
 import styled, { css } from 'styled-components'
-import { useStateWithLocalStorage } from './SupermarketList.hooks'
-import { Button } from '../ui/Buttons'
-import { ItemLoader } from '../ui/Loader/ItemLoader'
-import { List } from '../components'
+import { useSupermarketListState } from '../hooks/SupermarketList.hooks'
+import { Button } from '../ui/Button'
+import { ItemLoader } from '../ui/ListLoader'
+import { List } from '../components/List'
 import { ItemsCounter, H3 } from '../ui/Typography/Headings.styled'
 
 const Modal = React.lazy(() => import('../ui/Modal'))
 
 export const SupermarketList = () => {
-  const [items, addItem, removeItem, isListLoading] = useStateWithLocalStorage()
+  const [items, addItem, removeItem, isListLoading] = useSupermarketListState()
   const [isModalOpen, setModalOpen] = useState(false)
 
   const showCounter = () => {

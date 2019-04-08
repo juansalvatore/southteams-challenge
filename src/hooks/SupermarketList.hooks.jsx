@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
 import { addItem, getAllItems, removeItem } from '../api'
 
-export const useStateWithLocalStorage = () => {
+export const useSupermarketListState = () => {
   const [items, setItems] = useState([])
   const [isListLoading, setIsListLoading] = useState(true)
 
   useEffect(() => {
     setIsListLoading(true)
-    getAllItems().then(list => {
-      if (list !== null) setItems([...list])
-      setIsListLoading(false)
-    })
+    getAllItems()
+      .then(list => {
+        if (list !== null) setItems([...list])
+        setIsListLoading(false)
+      })
+      .catch(() => {
+        setIsListLoading(false)
+      })
   }, [])
 
   const addItemHook = newItem => {
