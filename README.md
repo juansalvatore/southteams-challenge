@@ -14,7 +14,7 @@ Create a React app that allows the user to make a supermarket list.
 
 3. `npm start`
 
-## How to run the project locally
+## How to run storybooks locally
 Steps 1 and 2 from above and: `npm run storybook`
 
 ## Technologies used
